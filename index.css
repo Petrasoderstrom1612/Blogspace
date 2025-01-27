@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #333;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 3em;
+    position: fixed;
+    width: 100%;
+}
+
+.nav-title{
+    margin: 0;
+}
+
+.posts-div{
+    padding: 5em 3em
+}
