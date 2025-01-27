@@ -22,7 +22,11 @@ document.getElementById("blog-form").addEventListener("submit", function(e) {
 
     let title = document.getElementById("title")
     let blogPost = document.getElementById("blog-post")
-    console.log(title.value, blogPost.value)
+    const userPost = {
+        title: title.value,
+        blogPost: blogPost.value
+    }
+    console.log(userPost)
     title.value = ""
     blogPost.value = ""
 })
