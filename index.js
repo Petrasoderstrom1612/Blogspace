@@ -16,3 +16,13 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
         
         postsDiv.innerHTML = returnedHtml
     })
+
+document.getElementById("blog-form").addEventListener("submit", function(e) {
+    e.preventDefault()
+
+    let title = document.getElementById("title")
+    let blogPost = document.getElementById("blog-post")
+    console.log(title.value, blogPost.value)
+    title.value = ""
+    blogPost.value = ""
+})
