@@ -2,6 +2,14 @@
 const postsDiv = document.getElementById("posts-div")
 let returnedHtml = []
 
+const htmlVariable = (post) => { 
+    return `
+                <h3>${post.title}</h3>
+                <p>${post.body}</p>
+                <hr />
+            `
+            }
+
 fetch("https://apis.scrimba.com/jsonplaceholder/posts")
     .then(res => res.json())
     .then(data => {
@@ -9,10 +17,7 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
         console.log(dataArrReduced)
         
          returnedHtml = dataArrReduced.map(onePost => {
-            return `<h1>${onePost.title}</h1>
-                    <p>${onePost.body}</p>
-                    <hr/>
-                    `
+            return `${htmlVariable(onePost)} `
         })
         
         console.log("returnedHtm", returnedHtml)
@@ -36,10 +41,7 @@ document.getElementById("blog-form").addEventListener("submit", function(e) {
     .then(res => res.json())
     .then(data => {console.log(data)
 
-    returnedHtml.unshift(`<h1>${data.title}</h1>
-                    <p>${data.body}</p>
-                    <hr/>
-                    `)
+    returnedHtml.unshift(`${htmlVariable(data)} `)
 
     postsDiv.innerHTML = returnedHtml.join("")
     title.value = ""
