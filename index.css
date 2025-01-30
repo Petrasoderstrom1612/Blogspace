@@ -31,10 +31,13 @@
 .title{
     margin:4px;
     margin-bottom: 20px;
+    padding:5px;
 }
 
 .blog-post{
-    padding: 20px;
+    padding:10px;
+    min-width: 173px;
+    min-height: 150px;;
     margin:4px;
     margin-bottom: 20px;
 }
@@ -48,5 +51,9 @@
 }
 
 .posts-div{
-    padding: 1em 3em
+    padding: 1em 3em;
+}
+
+.one-post-div{
+    margin-bottom: 2em;
 }

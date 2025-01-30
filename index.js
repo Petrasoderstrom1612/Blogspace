@@ -1,13 +1,15 @@
-
+const blogForm = document.getElementById("blog-form")
 const postsDiv = document.getElementById("posts-div")
 let dataArrReduced = []
 
 const htmlVariable = () => { 
     const html = dataArrReduced.map(post => { //loop over the array
         return `
+             <div class="one-post-div">
                 <h3>${post.title}</h3>
-                <p>${post.body}</p>
                 <hr />
+                <p>${post.body}</p>
+             </div>
             `}) 
     postsDiv.innerHTML = html.join("") //once you are done, gather it all, decompose it to string & update the DOM
 }
@@ -22,7 +24,7 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
         
     })
 
-document.getElementById("blog-form").addEventListener("submit", function(e) {
+    blogForm.addEventListener("submit", function(e) {
     e.preventDefault()
 
     let title = document.getElementById("title")
@@ -41,8 +43,7 @@ document.getElementById("blog-form").addEventListener("submit", function(e) {
     dataArrReduced.unshift(data) //update the array
     htmlVariable() //gather the html in the dom
 
-    title.value = ""
-    blogPost.value = ""
+    blogForm.clear() //clears all input fields within the form
     })
     .catch(error => console.error("Error:", error));
 })
