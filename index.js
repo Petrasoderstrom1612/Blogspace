@@ -43,7 +43,7 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
     dataArrReduced.unshift(data) //update the array
     htmlVariable() //gather the html in the dom
 
-    blogForm.clear() //clears all input fields within the form
+    blogForm.reset() //clears all input fields within the form
     })
     .catch(error => console.error("Error:", error));
 })
