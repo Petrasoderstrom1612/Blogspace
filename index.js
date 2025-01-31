@@ -2,7 +2,7 @@ const blogForm = document.getElementById("blog-form")
 const postsDiv = document.getElementById("posts-div")
 let dataArrReduced = []
 
-const htmlVariable = () => { 
+const renderHtml = () => { 
     const html = dataArrReduced.map(post => { //loop over the array
         return `
              <div class="one-post-div">
@@ -18,7 +18,7 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
     .then(res => res.json())
     .then(data => {
         dataArrReduced = data.slice(0,2)
-        htmlVariable()
+        renderHtml()
         console.log("dataArrReduced", dataArrReduced)             
 
         
@@ -41,7 +41,7 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
     .then(data => {console.log(data)
 
     dataArrReduced.unshift(data) //update the array
-    htmlVariable() //gather the html in the dom
+    renderHtml() //gather the html in the dom
 
     blogForm.reset() //clears all input fields within the form
     })
